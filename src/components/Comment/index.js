@@ -6,9 +6,9 @@ const Comment = () => {
     <Giscus
       id="comments"
       repo="zxytt/gatsby-blog"
-      repoId="R_kgDOLyoxWw"
+      repoId="R_kgDOL1kD9w"
       category="General"
-      categoryId="DIC_kwDOLyoxW84CfBU4"
+      categoryId="DIC_kwDOL1kD984CfD0r"
       mapping="pathname"
       term="Welcome to @giscus/react component!"
       reactionsEnabled="0"
