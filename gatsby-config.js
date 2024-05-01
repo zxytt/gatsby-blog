@@ -6,12 +6,20 @@ module.exports = {
     title: `gatsby-blog`,
     siteUrl: `https://www.yourdomain.tld`
   },
-  plugins: ["gatsby-plugin-postcss", "gatsby-transformer-remark", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+  plugins: [
+    "gatsby-plugin-postcss", 
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "data",
+        "path": './content/pages'
+      }
     },
-    __key: "pages"
-  }]
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: ['gatsby-remark-autolink-headers'],
+      }
+    }
+  ]
 };

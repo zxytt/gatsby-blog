@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-3xl
+  }
+  h2 {
+    @apply text-xl
+  }
+}
+.css-toc {
+  a {
+    text-decoration: none;
+  }
+  a.anchor {
+    fill: "red";
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: rgb(196, 189, 189);
+}
+
+::-moz-scrollbar {
+  width: 8px;
+}
+
+::-moz-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: rgb(196, 189, 189);
+}
+
+
