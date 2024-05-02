@@ -8,13 +8,14 @@ const SlugPage = ({ pageContext }) => {
   const { html, slug, directory } = pageContext
   pageviewCount({
     serverURL: 'https://gatsby-blog-waline.vercel.app/',
-    path: window.location.pathname
+    path: window.location.pathname,
+    update: true
   })
   return (
     <Layout >
       <div className="relative mx-10 css-toc">
         <div className="absolute left-28">
-        阅读量: <span className="waline-pageview-count" />
+          阅读量: <span className="waline-pageview-count" path={slug} />
           <article id="article" className="mb-10 prose" dangerouslySetInnerHTML={{ __html: html }} />
           <Comment />
         </div>
