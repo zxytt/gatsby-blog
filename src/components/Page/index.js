@@ -2,13 +2,20 @@ import React, { useState, useEffect } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import config from '../../../content/meta/config'
 import timeIcon from '../../assets/icons/time.svg'
-import AV from "leancloud-storage/core"
+// import AV from "leancloud-storage/core"
+// import { init } from '@waline/client'
 
-AV.init({
-  appId: "EdrgOXUYlV1CrT5os2ok7xVT-MdYXbMMI",
-  appKey: "ug08gczbBytHuZY8xW6KNEUk",
-  serverURL: "https://my-blog-mu-pied.vercel.app/",
-});
+// init({
+//   el: '#waline',
+//   serverURL: 'https://gatsby-blog-waline.vercel.app/',
+//   pageview: true
+// })
+
+// AV.init({
+//   appId: "EdrgOXUYlV1CrT5os2ok7xVT-MdYXbMMI",
+//   appKey: "ug08gczbBytHuZY8xW6KNEUk",
+//   serverURL: "https://my-blog-mu-pied.vercel.app/",
+// });
 
 const tagStyle = (index) => {
   return {
@@ -18,6 +25,11 @@ const tagStyle = (index) => {
 }
 
 const Page = () => {
+  // init({
+  //   el: '#waline',
+  //   serverURL: 'https://gatsby-blog-waline.vercel.app/',
+  //   pageview: true
+  // })
   const [tag, setTag] = useState('')
   const result = useStaticQuery(graphql`
     {
