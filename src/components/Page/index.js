@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import config from '../../../content/meta/config'
 import timeIcon from '../../assets/icons/time.svg'
 import AV from "leancloud-storage/core"
+import { init } from '@waline/client'
 
 AV.init({
   appId: "EdrgOXUYlV1CrT5os2ok7xVT-MdYXbMMI",
@@ -18,6 +19,11 @@ const tagStyle = (index) => {
 }
 
 const Page = () => {
+  init({
+    el: '#waline',
+    serverURL: 'https://gatsby-blog-waline.vercel.app/',
+    pageview: true
+  })
   const [tag, setTag] = useState('')
   const result = useStaticQuery(graphql`
     {
