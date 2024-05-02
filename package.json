@@ -23,6 +23,7 @@
     "gatsby-remark-autolink-headers": "^6.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-remark": "^6.13.1",
+    "leancloud-storage": "^4.15.2",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import config from '../../../content/meta/config'
 import timeIcon from '../../assets/icons/time.svg'
+import AV from "leancloud-storage/core"
+
+AV.init({
+  appId: "EdrgOXUYlV1CrT5os2ok7xVT-MdYXbMMI",
+  appKey: "ug08gczbBytHuZY8xW6KNEUk",
+  serverURL: "https://my-blog-mu-pied.vercel.app/",
+});
 
 const tagStyle = (index) => {
   return {
