@@ -2,20 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import config from '../../../content/meta/config'
 import timeIcon from '../../assets/icons/time.svg'
-// import AV from "leancloud-storage/core"
-// import { init } from '@waline/client'
-
-// init({
-//   el: '#waline',
-//   serverURL: 'https://gatsby-blog-waline.vercel.app/',
-//   pageview: true
-// })
-
-// AV.init({
-//   appId: "EdrgOXUYlV1CrT5os2ok7xVT-MdYXbMMI",
-//   appKey: "ug08gczbBytHuZY8xW6KNEUk",
-//   serverURL: "https://my-blog-mu-pied.vercel.app/",
-// });
+import Count from '../Count'
 
 const tagStyle = (index) => {
   return {
@@ -25,11 +12,6 @@ const tagStyle = (index) => {
 }
 
 const Page = () => {
-  // init({
-  //   el: '#waline',
-  //   serverURL: 'https://gatsby-blog-waline.vercel.app/',
-  //   pageview: true
-  // })
   const [tag, setTag] = useState('')
   const result = useStaticQuery(graphql`
     {
@@ -69,6 +51,7 @@ const Page = () => {
   const pageList = result.allMarkdownRemark.nodes.map((node, index) => {
     const { title, date, slug, cover, tags } = node.frontmatter
     const { publicURL } = cover
+    const path = slug == '/' ? slug : `/${slug}/`
     if(!tag || tags.indexOf(tag) != -1) {
       return (
         <Link to={`/${slug}`} key={node.id}>
@@ -87,7 +70,7 @@ const Page = () => {
                   <span className="text-xs">发布于：{date}</span>
                 </div>
                 <div className="flex items-center ml-5">
-                  <span className="text-xs">访问量：1231</span>
+                  <span className="text-xs">访问量：<Count path={path}/></span>
                 </div>
               </div>
             </div>

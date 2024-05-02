@@ -5,6 +5,7 @@ import ReactIcon from '../../assets/icons/react.svg'
 import GraphQLIcon from '../../assets/icons/graphql.svg'
 import TailwindCSSIcon from '../../assets/icons/tailwindcss.svg'
 import VercelIcon from '../../assets/icons/vercel.svg'
+import Count from '../Count'
 
 const buildIcons = {
   Gatsby: GatsbyIcon,

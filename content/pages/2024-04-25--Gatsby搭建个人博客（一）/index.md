@@ -7,8 +7,6 @@ tags: ["gatsby"]
 cover: photo-cover.jpg
 ---
 
-# My first blog post
-
 This is my first blog post.
 
 I hope you like it!

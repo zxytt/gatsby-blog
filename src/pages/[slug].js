@@ -1,23 +1,24 @@
 import React, { useEffect } from 'react'
 import Layout from '../components/Layout'
 import Comment from '../components/Comment'
+import Count from '../components/Count'
 import directoryIcon from '../assets/icons/directory.svg' 
-import { pageviewCount } from '@waline/client'
+
 
 const SlugPage = ({ pageContext }) => {
-  const { html, slug, directory } = pageContext
-  pageviewCount({
-    serverURL: 'https://gatsby-blog-waline.vercel.app/',
-    path: window.location.pathname,
-    update: true
-  })
+  const { html, slug, directory, title, } = pageContext
   return (
     <Layout >
       <div className="relative mx-10 css-toc">
-        <div className="absolute left-28">
-          阅读量: <span className="waline-pageview-count" path={slug} />
+        <div className="absolute left-28 right-48">
+          <div>
+          阅读量: <Count />
+          </div>
+          
           <article id="article" className="mb-10 prose" dangerouslySetInnerHTML={{ __html: html }} />
-          <Comment />
+          <div className='w-3/4'>
+            <Comment />
+          </div>
         </div>
         <div className="fixed right-28 overflow-hidden">
           <div className="flex">

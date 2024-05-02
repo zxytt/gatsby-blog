@@ -14,7 +14,9 @@ exports.createPages = async ({ graphql, actions }) => {
           id
           html
           frontmatter {
-            slug  
+            slug
+            title
+            date  
           }
           tableOfContents
         }
@@ -25,7 +27,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allMarkdownRemark.nodes.forEach((node) => {
     const { id, html, tableOfContents } = node
-    const { slug } = node.frontmatter
+    const { slug, title, date } = node.frontmatter
     createPage({
       path: `/${slug}`,
       component: path.resolve(`./src/pages/[slug].js`),
@@ -33,6 +35,8 @@ exports.createPages = async ({ graphql, actions }) => {
         id,
         html,
         slug,
+        title,
+        date,
         directory: tableOfContents
       }
     })
